@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { heroes } from './mondongo/data/heroes.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+console.log(heroes);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// const getHeroById = (id) =>{
+//     return heroes.find(heroe => heroe.id === id )
+// }
+
+const getHeroe = () => heroes.find(heroe => false)
+// const heroe2 = getHeroById(2)
+// console.log(heroe2);
+
+const heroe = getHeroe(2)
+console.log(heroe);
+
+const getHeroeByOwner = (owner) => heroes.filter( heroe => heroe.owner === owner)
+
+const owner = getHeroeByOwner('DC')
+console.log(owner);
+
